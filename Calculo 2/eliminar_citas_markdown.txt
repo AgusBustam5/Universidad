@@ -1,0 +1,1 @@
+\[(?:cite|source|cite_start|cite_end)[^\]]*\]
