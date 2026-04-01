@@ -1,6 +1,6 @@
 import numpy as np
 
-def Sistema_equivalente(r: np.array(list[list[int]]), F: np.array(list[list[int]]), M: np.array(list[list[int]]), x: np.array(list[int])):
+def Sistema_equivalente(r, F, M, x):
     fuerza_resultante = np.array([[0,0,0]], dtype=float)
     for i in range(len(F)):
         fuerza_resultante += F[i]
@@ -14,11 +14,33 @@ def Sistema_equivalente(r: np.array(list[list[int]]), F: np.array(list[list[int]
         momentos_libres += M[i]
     momento_final = momentos_de_fuerzas + momentos_libres
     return fuerza_resultante, momento_final
-r1  = np.array([[0,0,0.3]], dtype = float)
 
-f1 = np.array([[0,-100, 0]], dtype = float)
+def TorsorEquivalente(r, F, M):
+    fuerza_momento = Sistema_equivalente(r, F, M, np.array([[0, 0, 0]]))
+    R = fuerza_momento[0]
+    M_o = fuerza_momento[1]
+    modulo_fuerza = np.linalg.norm(R)
+    momento_torsor = (np.dot(R[0], M_o[0])/(modulo_fuerza**2))*R
 
-m1 = np.array([[-75, 0, 0]], dtype = float)
+    return momento_torsor
+    pass
+lista_distancias = []
+d1  = [0,0,0.3]
+lista_distancias.append(d1)
+dt = np.array(lista_distancias, dtype = float)
+
+lista_fuerzas = []
+f1 = [0,-100, 0]
+lista_fuerzas.append(f1)
+ft = np.array(lista_fuerzas, dtype = float)
+
+lista_momentos = []
+m1 = [-75, 0, 0]
+lista_momentos.append(m1)
+mt = np.array(lista_momentos, dtype = float)
+
+print(dt,ft,mt)
 
 origen = np.array([[0, 0.5, 0]], dtype = float)
-print(Sistema_equivalente(r1, f1, m1, origen))
+print(Sistema_equivalente(dt, ft, mt, origen))
+print(TorsorEquivalente(dt,ft,mt))
