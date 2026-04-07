@@ -56,8 +56,8 @@ origen_3d = np.array([[0, 0, 0]], dtype = float)
 #Problema 2 a)
 lista_distancias_p1 = []
 
-calculo_ej1_d1_y = -(1 + np.cos(30))
-calculo_ej1_d1_z = np.sin(30)
+calculo_ej1_d1_y = -(1 + np.cos(30) * 1.5)
+calculo_ej1_d1_z = np.sin(30) * 1.5
 p1_d1  = [0,calculo_ej1_d1_y,calculo_ej1_d1_z]
 lista_distancias_p1.append(p1_d1)
 
@@ -230,6 +230,7 @@ p3_mp1 = np.cross(np.array([[33-18, 4, 0]]), np.array([[1, 0, 0]]))
 p3_mp2 = np.cross(np.array([[21-18, 0, 0]]), np.array([[0, -1, 0]]))
 num_de_P = p3_mp1[0][2] + p3_mp2[0][2]
 valor_P = -(p3_sistema_sin_P[1][0][2]/num_de_P)
+
 print("Resultados Problema 3, a")
 print("  El valor para P necesario: ", valor_P, "\n")
 
@@ -239,29 +240,66 @@ print("  El valor para P necesario: ", valor_P, "\n")
 
 lista_distancias_p3_b = copy.deepcopy(lista_distancias_p2)
 lista_fuerzas_p3_b = copy.deepcopy(lista_fuerzas_p2)
-sistema_p2_b_respecto_0 = Sistema_equivalente(p2_dt, p2_ft, p2_mt, origen_2d)
-momento_p2_b_respecto_0 = sistema_p2_b_respecto_0[1]
-fuerza_p3_b_r3 = momento_p2_b_respecto_0[0][2]/36
+l_d_p3_b_B = copy.deepcopy(lista_distancias_p2)
+l_f_p3_b_B = copy.deepcopy(lista_fuerzas_p2)
+
+sistema_p2_b_respecto_A = Sistema_equivalente(p2_dt, p2_ft, p2_mt, origen_2d)
+momento_p2_b_respecto_A = sistema_p2_b_respecto_A[1]
+
+sistema_p2_b_respecto_B = Sistema_equivalente(p2_dt, p2_ft, p2_mt, np.array([[36,0]], dtype = float))
+momento_p2_b_respecto_B = sistema_p2_b_respecto_B[1]
+
+fuerza_p3_b_r3_A = momento_p2_b_respecto_A[0][2]/36
+fuerza_p3_b_r3_B = -momento_p2_b_respecto_B[0][2]/36
 
 lista_distancias_p3_b.append([36, 0])
-lista_fuerzas_p3_b.append([0, -fuerza_p3_b_r3])
+lista_fuerzas_p3_b.append([0, -fuerza_p3_b_r3_A])
+
+l_d_p3_b_B.append([0, 0])
+l_f_p3_b_B.append([0, -fuerza_p3_b_r3_B])
+
 p3_b_dt = np.array(lista_distancias_p3_b, dtype = float)
 p3_b_ft = np.array(lista_fuerzas_p3_b, dtype = float)
 p3_b_mt = np.array([[0,0]], dtype = float)
+
+p3_b_dt_B = np.array(l_d_p3_b_B, dtype = float)
+p3_b_ft_B = np.array(l_f_p3_b_B, dtype = float)
+
 sistema_p2_b_respecto_0_r3 = Sistema_equivalente(p3_b_dt, p3_b_ft, p3_b_mt, origen_2d)
+sistema_p2_b_respecto_B_r1 = Sistema_equivalente(p3_b_dt_B, p3_b_ft_B, p3_b_mt, np.array([[36, 0]], dtype = float))
+
 p3_b_fr_x = -sistema_p2_b_respecto_0_r3[0][0][0]
 p3_b_fr_y = -sistema_p2_b_respecto_0_r3[0][0][1]
+p3_b_fr_y_B = -sistema_p2_b_respecto_B_r1[0][0][1]
+
 lista_distancias_p3_b.append([0, 0])
 lista_fuerzas_p3_b.append([p3_b_fr_x, 0])
+l_d_p3_b_B.append([0, 0])
+l_f_p3_b_B.append([p3_b_fr_x, 0])
+
 lista_distancias_p3_b.append([0, 0])
 lista_fuerzas_p3_b.append([0, p3_b_fr_y])
+l_d_p3_b_B.append([36, 0])
+l_f_p3_b_B.append([0, p3_b_fr_y_B])
+
 p3_b_2_dt = np.array(lista_distancias_p3_b, dtype = float)
 p3_b_2_ft = np.array(lista_fuerzas_p3_b, dtype = float)
+p3_b_2_dt_B = np.array(l_d_p3_b_B, dtype = float)
+p3_b_2_ft_B = np.array(l_f_p3_b_B, dtype = float)
+
+print(Sistema_equivalente(p3_b_2_dt, p3_b_2_ft, p3_b_mt, origen_2d))
+print(Sistema_equivalente(p3_b_2_dt_B, p3_b_2_ft_B, p3_b_mt, np.array([[36,0]], dtype = float)))
 
 print("Resultados Problema 3, b\n")
+print(" Respecto al punto A")
 print("  Valor para R1: ", f"(0, {p3_b_fr_y})")
 print("  Valor para R2: ", f"({p3_b_fr_x}, 0)")
-print("  Valor para R3: ", f"(0, {fuerza_p3_b_r3})", "\n")
+print("  Valor para R3: ", f"(0, {fuerza_p3_b_r3_A})", "\n")
+
+print(" Respecto al punto B")
+print("  Valor para R1: ", f"(0, {p3_b_fr_y_B})")
+print("  Valor para R2: ", f"({p3_b_fr_x}, 0)")
+print("  Valor para R3: ", f"(0, {fuerza_p3_b_r3_B})", "\n")
 
 #Problema 3 c)
 
