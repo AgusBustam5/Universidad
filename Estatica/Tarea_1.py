@@ -313,8 +313,7 @@ for i in range(12):
     copia_lista_fuerzas_puente.append([0, p3_c_fr_r1])
     prueba_dt = np.array(copia_lista_distancias_puente, dtype = float)
     prueba_ft = np.array(copia_lista_fuerzas_puente, dtype = float)
-print(pos_max)
-print(pos_min)
+
 print("Resultados Problema 3, c\n")
 print("(Posicion referenta a la rueda trasera del camion)")
 print(f"  Posicion del camion para el valor maximo de R1: ({pos_max}, 0), con R1 = (0, {R1_max})")
