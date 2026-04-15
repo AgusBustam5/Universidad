@@ -1,6 +1,8 @@
 # TEMA 1: Fundamentos de la Economía
 
 ### 1.1 La Economía y sus Principios
+*(Referencia: Clase 1 - Presentación e Introducción / Clase 2 - Principios de la Economía)*
+
 La economía es el estudio de cómo la sociedad asigna recursos que son inherentemente **escasos** para satisfacer fines competitivos. Esta escasez implica que la sociedad tiene menos de lo que los individuos desean, impidiendo que todos alcancen el máximo nivel de vida al que aspiran. 
 
 El marco teórico se sostiene en **10 Principios fundamentales** (Mankiw), divididos en tres ejes:
@@ -19,6 +21,8 @@ El marco teórico se sostiene en **10 Principios fundamentales** (Mankiw), divid
 *(Los principios 8, 9 y 10 abordan la macroeconomía: productividad como base del nivel de vida, inflación por emisión monetaria y disyuntiva a corto plazo entre inflación y desempleo).*
 
 ### 1.2 Modelos Básicos
+*(Referencia: Clase 2 - Principios de la Economía / Clase 3 - Modelos Económicos y Comercio)*
+
 Los modelos son abstracciones matemáticas y gráficas que omiten detalles irrelavantes para aislar variables críticas.
 
 * **Diagrama de Flujo Circular de la Renta:** Modela la economía con dos agentes (Familias y Empresas) y dos mercados (Bienes/Servicios y Factores de Producción). Demuestra que el gasto de un agente es matemáticamente equivalente al ingreso de otro. Existen dos circuitos paralelos: el flujo real (insumos y productos) y el flujo monetario (dinero).
@@ -29,6 +33,8 @@ Los modelos son abstracciones matemáticas y gráficas que omiten detalles irrel
     * *Pendiente:* Matemáticamente, la pendiente de la curva ($-\frac{dy}{dx}$) es el **costo de oportunidad** del bien en el eje X. Si la FPP es una línea recta, los factores de producción son perfectamente sustituibles (costo constante). Si es cóncava hacia el origen, refleja la **Ley de Rendimientos Decrecientes** (costos de oportunidad crecientes, ya que los recursos no son igualmente aptos para producir ambos bienes).
 
 ### 1.3 Importancia del Comercio
+*(Referencia: Clase 3 - Modelos Económicos y Comercio)*
+
 La teoría del comercio internacional refuta la idea de que un país debe producir todo lo que consume.
 * **Ventaja Absoluta:** Capacidad de producir un bien usando menos insumos o tiempo que otro productor.
 * **Ventaja Comparativa:** Capacidad de producir un bien con un **menor costo de oportunidad**. Fue desarrollada por David Ricardo.
@@ -40,6 +46,8 @@ La teoría del comercio internacional refuta la idea de que un país debe produc
 # TEMA 2: Funcionamiento de los Mercados
 
 ### 2.1 Las Fuerzas del Mercado
+*(Referencia: Clase 4 y Clase 5 - Funcionamiento de los Mercados: Las Fuerzas del Mercado)*
+
 Analizamos mercados **perfectamente competitivos**: bienes homogéneos y agentes precio-aceptantes (ninguno influye en el precio por sí solo).
 
 * **La Demanda:** Refleja el comportamiento de los compradores.
@@ -55,6 +63,8 @@ Analizamos mercados **perfectamente competitivos**: bienes homogéneos y agentes
 * **Equilibrio de Mercado:** Único punto donde se vacía el mercado ($Q_D = Q_S$). Cualquier precio superior genera un **exceso de oferta** (presión a la baja del precio). Cualquier precio inferior genera una **escasez o exceso de demanda** (presión al alza del precio).
 
 ### 2.2 Elasticidad
+*(Referencia: Clase 6 - Funcionamiento de los Mercados: Elasticidad)*
+
 Medida cuantitativa de la sensibilidad de la cantidad demandada u ofrecida ante cambios en sus determinantes.
 
 * **Elasticidad Precio de la Demanda ($\epsilon_P$):** Matemáticamente se define en un punto como $\epsilon_P = \frac{\partial Q}{\partial P} \cdot \frac{P}{Q}$.
@@ -69,6 +79,8 @@ Medida cuantitativa de la sensibilidad de la cantidad demandada u ofrecida ante 
 # TEMA 3: Eficiencia, Bienestar y Políticas de Gobierno
 
 ### 3.1 Eficiencia de Mercado (Economía del Bienestar)
+*(Referencia: Clase 7 - Eficiencia de Mercado)*
+
 Estudia cómo la asignación de recursos maximiza la utilidad de la sociedad.
 * **Disposición al Pago:** El precio máximo que un comprador pagaría. La curva de demanda representa la disposición marginal a pagar.
 * **Excedente del Consumidor (EC):** Beneficio neto de los compradores. Es la integral del área bajo la curva de demanda y por encima del precio de equilibrio.
@@ -77,6 +89,8 @@ Estudia cómo la asignación de recursos maximiza la utilidad de la sociedad.
 * **Eficiencia:** Un mercado es eficiente si maximiza el **Bienestar Social Total (EC + EP)**. Un *Planificador Social Benevolente* no podría alterar la cantidad transada en equilibrio competitivo para mejorar el bienestar; cualquier desviación genera pérdida irrecuperable.
 
 ### 3.2 Control de Precios, Impuestos y Subsidios
+*(Referencia: Clase 8 - Control Precios, Impuestos y Subsidios)*
+
 * **Precios Máximos:** Si es relevante (fijado por debajo del equilibrio), genera escasez, aparición de mercados negros y mecanismos de racionamiento ineficientes (filas, discriminación).
 * **Precios Mínimos:** Si es relevante (por encima del equilibrio), genera excedente (ej. salario mínimo genera desempleo).
 * **Impuestos:** Introducen una **cuña fiscal**. El precio que pagan los compradores ($P_D$) se separa del que reciben los vendedores ($P_O$), tal que $P_D - P_O = t$.
@@ -85,12 +99,16 @@ Estudia cómo la asignación de recursos maximiza la utilidad de la sociedad.
 * **Subsidios:** Funcionan como impuestos negativos ($P_O - P_D = s$). Aumentan la cantidad transada artificialmente más allá del óptimo, generando también una pérdida de bienestar porque el costo de producir esas unidades extra es mayor que la disposición a pagarlas.
 
 ### 3.3 El Comercio Internacional
+*(Referencia: Clase 9 - Comercio Internacional)*
+
 Se analiza el efecto de conectar una economía local (tomadora de precios) al **Precio Mundial ($P_M$)**.
 * **Apertura a Exportaciones ($P_M > P_{interno}$):** El precio local sube. Ganan los productores (aumenta su excedente), pierden los consumidores. El bienestar total del país aumenta.
 * **Apertura a Importaciones ($P_M < P_{interno}$):** El precio local cae. Ganan los consumidores enormemente, pierden los productores locales. El bienestar total aumenta.
 * **Aranceles ($\tau$):** Impuesto exclusivo a la importación. Eleva el precio interno a $P_M + \tau$. Reduce las importaciones, traslada excedente del consumidor al productor local y al Estado (recaudación), pero genera una Pérdida Irrecuperable de Bienestar originada por dos ineficiencias: sobreproducción local ineficiente y subconsumo local.
 
 ### 3.4 Sistema de Impuestos (Enfoque SII y Sello IPCh)
+*(Referencia: Lectura Tema 09 - Sistema de Impuestos)*
+
 La política tributaria no solo recauda, moldea la estructura social.
 * **Principios Impositivos:** 1. *Principio de capacidad de pago:* Quien tiene mayor capacidad económica debe contribuir más.
     2. *Principio de beneficio:* Los individuos pagan en función del provecho que obtienen de los servicios estatales (ej. peajes).
