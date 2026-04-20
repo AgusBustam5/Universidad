@@ -1,132 +1,145 @@
-# PAUTA DE CORRECCIÓN: EJERCICIOS AVANZADOS (ICS1513)
-
----
+# SOLUCIONARIO DEFINITIVO: INTRODUCCIÓN A LA ECONOMÍA (ICS1513)
 
 ## 📚 TEMA 1: Fundamentos de la Economía
 
-### Ejercicio 1.6: Análisis Marginal y Costos Hundidos
-* **a) El error del gerente:** El gerente está sufriendo la "falacia del costo hundido". Los \$50 millones ya se gastaron y no se pueden recuperar, independientemente de la decisión que se tome hoy. En economía, las decisiones racionales se toman en el margen: solo se deben comparar los **Costos Marginales (CMg)** futuros con los **Beneficios Marginales (BMg)** futuros. 
-* **b) Decisión racional:** * CMg de terminar el juego = \$20 millones.
-    * BMg de terminar el juego = \$40 millones (ventas).
-    * Como $BMg > CMg$ ($40M > 20M$), la decisión racional es **terminar el juego**. 
-    * *Pérdida Neta:* Si abandona el proyecto, pierde \$50M. Si lo termina, su balance total es $-50M - 20M + 40M = -\$30M$. Perder 30 es estrictamente mejor que perder 50.
+**1.1 Florencia y Javiera**
+* **a)** Florencia: **12** Macro (360/30) y **24** Micro (360/15). Javiera: **18** Macro (360/20) y **9** Micro (360/40).
+* **b)** Ventaja Absoluta: Javiera en Macro (18 > 12). Florencia en Micro (24 > 9).
+* **c)** CO Macro Florencia: **2 Micro**. CO Macro Javiera: **0.5 Micro**. VC en Macro: Javiera (0.5 < 2). VC en Micro: Florencia.
 
-### Ejercicio 1.7: FPP y Cambio Tecnológico Asimétrico
-* **a) FPP original:** $A = 1000 - 2T$. La pendiente es $-2$. El costo de oportunidad de 1 tonelada de Trigo ($T$) son **2 Automóviles ($A$)**.
-* **b) Nueva FPP:** Si el rendimiento del trigo se duplica, la cantidad máxima de trigo que puede producir (cuando $A=0$) pasa de 500 a 1000 toneladas. Los autos máximos siguen siendo 1000. La nueva pendiente es $-1$. Nueva ecuación: **$A = 1000 - 1T$**.
-* **c) Nuevos Costos:** El costo de oportunidad del Trigo bajó a **1 Automóvil** (es más eficiente producirlo). Matemáticamente, el costo de oportunidad del Automóvil es el inverso. Antes era $1/2$ tonelada de trigo; ahora es **1 tonelada de trigo**. 
-*Intuición:* Como ahora soy tan bueno cosechando trigo, cada vez que decido sacar trabajadores del campo para armar 1 auto, estoy sacrificando mucha más cantidad de trigo que antes.
+**1.2 El Teorema del Comercio**
+El Costo de Oportunidad (CO) de un bien es el inverso matemático del otro ($CO_x = 1/CO_y$). Si un país tiene un $CO_x$ menor, su inverso ($CO_y$) será matemáticamente mayor. Es imposible tener el número menor en ambas fracciones simultáneamente.
 
-### Ejercicio 1.8: Términos de Intercambio
-* **a) Ventajas:**
-    * **Absoluta:** Japón gana en Autos (2h < 4h). Vietnam gana en Arroz (4h < 6h).
-    * **Costos de Oportunidad Japón:** 1 Auto cuesta $2/6 = 0.33$ Arroz. 1 Arroz cuesta $6/2 = 3$ Autos.
-    * **Costos de Oportunidad Vietnam:** 1 Auto cuesta $4/4 = 1$ Arroz. 1 Arroz cuesta $4/4 = 1$ Auto.
-    * **Ventaja Comparativa:** Japón en Autos ($0.33 < 1$). Vietnam en Arroz ($1 < 3$).
-* **b) Rango de precios:** El precio del Auto debe estar entre los costos de oportunidad de ambos: **$0.33 < P_{\text{Auto}} < 1$** tonelada de Arroz.
-* **c) Falla del comercio a 1.5:** Si el precio internacional es 1 Auto = 1.5 Arroz, Japón estará feliz de vender, pero **Vietnam no comprará**. A Vietnam le cuesta internamente solo 1 tonelada de Arroz fabricar su propio auto; es irracional que pague 1.5 toneladas en el mercado internacional. No hay comercio beneficioso a ese precio.
+**1.3 Análisis Marginal: La Aerolínea**
+**Sí.** Los \$100.000 son un costo hundido. El Costo Marginal (CMg) de un pasajero extra en un asiento vacío es casi \$0. Como el Beneficio Marginal (\$600) es mayor al CMg, la decisión es vender el boleto.
 
-### Ejercicio 1.9: FPP Conjunta
-* **a) Costos de Oportunidad:** * Planta 1 ($Y = 100 - X$): CO de $X = 1Y$. Max $X=100$.
-    * Planta 2 ($Y = 50 - 0.5X$): CO de $X = 0.5Y$. Max $X=100$.
-    * VC en $X$: Planta 2 ($0.5 < 1$). VC en $Y$: Planta 1.
-* **b) Quiebre:** La cantidad máxima de $Y$ conjunta es $150$ (100 de P1 + 50 de P2). Si queremos empezar a producir $X$, usamos primero la Planta 2 porque es más barata (pendiente -0.5). La Planta 2 se agota cuando produce $X=100$ (ahí la industria entera produce $X=100, Y=100$). A partir de $X=100$, debemos usar la Planta 1 (pendiente -1).
-* **c) Producción de 60 X:** Como $60 < 100$, solo necesitamos a la fábrica más eficiente. La **Planta 2** produce las 60 unidades de $X$ (y le sobran recursos para hacer $20$ de $Y$). La **Planta 1** se dedica 100% a producir $Y$ ($100$ unidades).
+**1.4 FPP No Lineal: Isla de Cocos**
+* **a)** Interceptos: **10** Cocos y **10** Peces. La concavidad indica la Ley de Rendimientos Decrecientes (el costo de oportunidad es creciente porque los recursos no son igualmente eficientes para ambas tareas).
+* **b)** En (6,8) hay 8 Peces. En (8,6) hay 6 Peces. Se sacrifican 2 Peces para ganar 2 Cocos. CO = 2/2 = **1 Pez por Coco**.
+
+**1.5 Microchips y Pantallas**
+* **a)** Máximos (1000h): Corea (500 C, 250 P); Japón (200 C, 200 P). Corea tiene Ventaja Absoluta en ambos. CO Chips Corea: **0.5** Pantallas. CO Chips Japón: **1** Pantalla. Corea tiene VC en Chips, Japón en Pantallas.
+* **b)** Término de intercambio: Entre **0.5 y 1 Pantalla por Chip**.
+
+**1.6 Costos Hundidos: Proyecto Software**
+**Debe terminarse.** Los \$50M son irrecuperables. Hacia el futuro, CMg es \$20M y BMg es \$40M. Como $BMg > CMg$, conviene terminarlo (la pérdida neta será de \$30M, mucho mejor que perder \$50M de golpe).
+
+**1.7 Cambio Tecnológico Asimétrico**
+* **a)** $A = 1000 - 1T$.
+* **b)** El CO del Auto aumentó (pasó de 0.5T a 1T). Los autos se encarecieron relativamente porque ahora se sacrifica más trigo eficiente para fabricar un auto.
+
+**1.8 Rango de Precios**
+* **a)** CO Auto Japón = **0.33** Arroz. CO Auto Vietnam = **1** Arroz. Rango: Entre **0.33 y 1 tonelada de Arroz por Auto**.
+
+**1.9 FPP Conjunta (2 Plantas)**
+* **a)** P2 produce X primero (es más eficiente, CO = 0.5Y). El quiebre ocurre en $X = 100$, donde $Y = 100$ (todo el Y lo aporta P1). Tramo 1 (hasta $X = 100$): $Y = 150 - 0.5X$. Tramo 2 (desde $X > 100$): $Y = 200 - X$.
 
 ---
 
 ## 📈 TEMA 2: Funcionamiento de los Mercados
 
-### Ejercicio 2.6: Demanda Multivariable
-* **a) Cantidad:** $Q_D = 10000 - 20(100) + 5(40) + 0.1(20000) = 10000 - 2000 + 200 + 2000 = \mathbf{10200}$.
-* **b) Elasticidades:**
-    * $\epsilon_P = (\frac{\partial Q}{\partial P_A}) \cdot \frac{P_A}{Q} = -20 \cdot \frac{100}{10200} = \mathbf{-0.196}$
-    * $\epsilon_I = (\frac{\partial Q}{\partial I}) \cdot \frac{I}{Q} = 0.1 \cdot \frac{20000}{10200} = \mathbf{0.196}$
-    * $\epsilon_C = (\frac{\partial Q}{\partial P_B}) \cdot \frac{P_B}{Q} = 5 \cdot \frac{40}{10200} = \mathbf{0.0196}$
-* **c) Clasificación:** Es un bien **Normal** ($\epsilon_I > 0$), **Inelástico** ($|\epsilon_P| < 1$), y es un bien **Sustituto** a los buses ($\epsilon_C > 0$).
+**2.1 Shocks en el Mercado del Helado**
+* **a)** Sube Demanda: Precio sube, Cantidad sube.
+* **b)** Cae Oferta: Precio sube, Cantidad cae.
+* **c)** Ambos simultáneos: Precio sube sí o sí. La Cantidad es ambigua.
 
-### Ejercicio 2.7: Oferta Perfectamente Inelástica
-* **a) Ecuación:** La oferta no depende del precio, la cantidad está fija. **$Q_S = 50.000$**. Gráficamente es una línea completamente vertical.
-* **b) Precio equilibrio:** Reemplazamos $Q$ en la demanda: $P = 150.000 - 2(50.000) = \mathbf{50.000}$.
-* **c) Elasticidad:** $\epsilon_S = \mathbf{0}$. Significa que, sin importar cuánto suba o baje el precio de reventa de la entrada, no se pueden "fabricar" más asientos en el estadio.
+**2.2 Paltas Orgánicas**
+* **a)** $$8000 - 20P = 2000 + 10P \implies 30P = 6000 \implies P = 200, Q = 4000$$
+* **b)** $\epsilon_P = (-20) \cdot (200/4000) =$ **-1**.
 
-### Ejercicio 2.8: Relación IT y Elasticidad
-* **a) Función IT:** $IT = P \cdot Q \implies IT = (120 - 3Q) \cdot Q \implies \mathbf{IT = 120Q - 3Q^2}$.
-* **b) Maximización:** Derivamos IT e igualamos a cero (Ingreso Marginal = 0). 
-    $120 - 6Q = 0 \implies \mathbf{Q = 20}$. 
-    Precio: $P = 120 - 3(20) = \mathbf{60}$.
-* **c) Elasticidad en el máximo:** Despejamos Q de la demanda: $Q = 40 - P/3$. Derivada = $-1/3$.
-    $\epsilon_P = (-\frac{1}{3}) \cdot \frac{60}{20} = \mathbf{-1}$. 
-    *Explicación:* El ingreso máximo siempre se alcanza donde la elasticidad es unitaria. En el tramo elástico conviene bajar el precio, en el inelástico subirlo; en $-1$ ya no hay mejora posible.
+**2.3 Bienes Inferiores: Transporte Público**
+* **a)** Es un **Bien Normal**. El signo de la variable del ingreso $I$ es positivo ($+0.5I$), indicando que si el ingreso sube, la cantidad demandada también lo hace.
 
-### Ejercicio 2.9: Choques Simultáneos (Álgebra)
-* **a) Equilibrio original:** $A - P = P - B \implies 2P = A + B \implies \mathbf{P^* = \frac{A+B}{2}}$.
-    Para $Q^*$: $Q = A - (\frac{A+B}{2}) = \mathbf{\frac{A-B}{2}}$.
-* **b) Nuevos valores:** $A$ cae a $A'$ ($A' < A$). $B$ sube a $B'$ ($B' > B$). 
-    Nuevo equilibrio: $P' = \frac{A'+B'}{2}$, $Q' = \frac{A'-B'}{2}$.
-* **c) Análisis de signos:** * **Cantidad:** Como $A$ disminuyó y $B$ aumentó, el numerador $(A'-B')$ es estrictamente menor que $(A-B)$. **La cantidad cae seguro.**
-    * **Precio:** Depende del numerador $(A'+B')$. $A$ cayó (empuja P abajo) y $B$ subió (empuja P arriba). No podemos saber matemáticamente el signo final sin los valores exactos. Es **ambiguo**.
+**2.4 Elasticidad Cruzada: Té y Café**
+* **a)** $Q_T = 2000 - 10(100) + 5(200) =$ **2000**. $\epsilon_C = 5 \cdot (200/2000) =$ **0.5**. Al ser un valor positivo, son bienes **Sustitutos**.
+
+**2.5 Colusión e Ingreso Total**
+* **a)** Equilibrio: $P = 60, Q = 40$. $\epsilon_P = (-1) \cdot (60/40) =$ **-1.5**. Como la demanda es elástica en ese punto, subir el precio hará caer la cantidad en mayor proporción, por lo que **el Ingreso Total disminuirá**.
+
+**2.6 Demanda Multivariable: Aviones**
+* **a)** $Q_D = 10000 - 20(100) + 5(40) + 0.1(20000) =$ **10200**. $\epsilon_I = 0.1 \cdot (20000/10200) =$ **0.196**.
+
+**2.7 Oferta Perfectamente Inelástica**
+* **a)** $Q_S =$ **50.000** (línea vertical). $P = 150.000 - 2(50.000) =$ **50.000**. $\epsilon_S =$ **0**.
+
+**2.8 Maximización del Ingreso Total**
+* **a)** $IT = 120Q - 3Q^2$. $IMg = 120 - 6Q = 0 \implies$ **$Q = 20$** ($P = 60$). Elasticidad: $(-1/3) \cdot (60/20) =$ **-1** (siempre es unitaria en el punto de máximo ingreso).
+
+**2.9 Shocks Simultáneos y Ambigüedad**
+* **a)** $P = (A+B)/2$, $Q = (A-B)/2$. Si $A$ cae y $B$ sube, el numerador $(A-B)$ disminuye obligatoriamente (**Q cae**). El numerador $(A+B)$ suma una baja y un alza, por lo que matemáticamente el **P es ambiguo**.
 
 ---
 
 ## ⚖️ TEMA 3: Eficiencia, Bienestar y Políticas de Gobierno
 
-### Ejercicio 3.6: Precio Mínimo Agrícola
-* **a) Equilibrio inicial:** $500 - 10P = 10P - 100 \implies 20P = 600 \implies \mathbf{P=30, Q=200}$.
-* **b) Excedente ($P=40$):** $Q_D = 500 - 10(40) = 100$ (La gente compra menos).
-    $Q_S = 10(40) - 100 = 300$ (Los lecheros producen más).
-    Excedente = $300 - 100 = \mathbf{200\ litros}$.
-* **c) Gasto del Gobierno:** El Estado compra los 200 litros sobrantes a \$40. Gasto = $200 \cdot 40 = \mathbf{\$8.000}$. (Política altamente ineficiente).
+**3.1 Impuesto Específico**
+* **a)** Eq libre: $P = 90, Q = 30$.
+* **b)** Con $t = 15$: 
+$$(120 - Q) - (30 + 2Q) = 15 \implies Q_t = 25$$
+$P_D =$ **95**. $P_S =$ **80**.
+* **c)** Recaudación = $15 \cdot 25 =$ **375**.
+* **d)** PBS = $(30 - 25) \cdot 15 / 2 =$ **37.5**.
 
-### Ejercicio 3.7: Incidencia Parametrizada
-* **a) Equilibrio con impuesto:** $P_D = P_S + t \implies (a - bQ) = (c + dQ) + t \implies Q(b+d) = a - c - t \implies \mathbf{Q_t = \frac{a - c - t}{b + d}}$.
-* **b) Demostración con d=0:** Si $d=0$ (oferta horizontal), $Q_t = \frac{a-c-t}{b}$. 
-    El precio que paga la demanda es $P_D = a - b(\frac{a-c-t}{b}) \implies P_D = a - (a - c - t) \implies \mathbf{P_D = c + t}$. Como el precio original era $c$, el consumidor absorbió exactamente el 100% del impuesto ($t$).
-* **c) Intuición:** $d=0$ significa oferta perfectamente elástica. Los productores son hipersensibles al precio; si ganan un peso menos, se van del mercado. Para que se queden, el consumidor debe asumir todo el costo del impuesto.
+**3.2 El Salario Mínimo**
+* **a)** Eq libre: $W = 66.6, L = 666$.
+* **b)** Con $W_{min} = 80$: Las empresas contratan lo que dicta la demanda $L_D = 1000 - 5(80) =$ **600 contratados**.
+* **c)** Oferta laboral $L_S = 10(80) =$ **800**. Desempleo = $800 - 600 =$ **200 personas**.
 
-### Ejercicio 3.8: Maximización de Recaudación (Derivadas)
-* **a) Función de $Q_t$:** $100 - Q = 20 + Q + t \implies 2Q = 80 - t \implies \mathbf{Q_t = 40 - 0.5t}$.
-* **b) Función RF:** $RF = t \cdot Q_t \implies \mathbf{RF(t) = 40t - 0.5t^2}$.
-* **c) Impuesto Óptimo:** Derivamos igualando a cero: 
-    $\frac{dRF}{dt} = 40 - t = 0 \implies \mathbf{t^* = 40}$.
-    *Recaudación Máxima:* $40(40) - 0.5(40^2) = 1600 - 800 = \mathbf{\$800}$.
+**3.3 Incidencia del Subsidio (Teórico)**
+* La curva más inelástica (la más empinada) es menos sensible a los precios y no puede salirse fácilmente del mercado. Al aplicar la cuña ($P_S - P_D = s$), la curva con mayor pendiente sufre la mayor variación en su precio de equilibrio original, "apropiándose" de la mayor porción del beneficio.
 
-### Ejercicio 3.9: Subsidio como Corrección
-* **a) Equilibrio actual:** $800 - 2Q = 200 + 4Q \implies 6Q = 600 \implies \mathbf{Q = 100}$.
-* **b) Forzar $Q=120$:** Evaluamos los precios en las curvas para 120 alumnos.
-    Demanda paga: $P_D = 800 - 2(120) = \$560$.
-    Oferta exige: $P_S = 200 + 4(120) = \$680$.
-    Ecuación de subsidio: $s = P_S - P_D \implies s = 680 - 560 = \mathbf{\$120\ por\ alumno}$.
-* **c) Costo del programa:** $s \cdot Q_{\text{nueva}} = 120 \cdot 120 = \mathbf{\$14.400}$.
+**3.4 Bebidas Azucaradas**
+* **a)** Despejando: $P_D = 150 - 0.5Q$, $P_S = 15 + 0.25Q$. Cuña:
+$$(150 - 0.5Q) - (15 + 0.25Q) = 15 \implies 135 - 0.75Q = 15 \implies Q_t = 160$$
+$P_D =$ **70**, $P_S =$ **55**. El precio original era 60. El consumidor absorbe \$10 (**66.6%**) y el productor \$5 (**33.3%**).
+
+**3.5 Medicamentos y Mercado Negro**
+* **a)** A $P = 3000$: $Q_S = 500, Q_D = 1400$. Escasez = **900**. Disposición a pagar por esas únicas 500 unidades en el mercado: $P = 10000 - 5(500) =$ **\$7500** (Precio de mercado negro).
+
+**3.6 Sobreproducción Lechera**
+* **a)** A $P = 40$: $Q_D = 100, Q_S = 300$. Excedente = **200**. Gasto fiscal = $200 \cdot 40 =$ **\$8000**.
+
+**3.7 Incidencia Parametrizada**
+* **a)** Si $d = 0 \implies P_S = c$ (oferta perfectamente elástica). Por la fórmula de cuña: $P_D - c = t \implies$ **$P_D = c + t$**. El consumidor paga el precio original más el 100% del impuesto.
+
+**3.8 Maximización de la Recaudación**
+* **a)** Cuña:
+$$100 - Q - (20 + Q) = t \implies Q_t = 40 - 0.5t$$
+Función $RF = 40t - 0.5t^2$. Derivando: $40 - t = 0 \implies$ **$t = 40$**.
+
+**3.9 Subsidio para Meta de Estudiantes**
+* **a)** Evaluamos la meta $Q = 120$: $P_D = 560, P_S = 680$. Ecuación de subsidio $s = P_S - P_D \implies 680 - 560 =$ **120**.
 
 ---
 
 ## 🌍 TEMA 4: Comercio Internacional y Sistema de Impuestos
 
-### Ejercicio 4.4: Maximización Arancelaria
-* **a) Función Importaciones ($M$):** Despejamos $Q$ de ambas curvas. 
-    Demanda: $2Q = 300 - P \implies Q_D = 150 - 0.5P$. 
-    Oferta: $2Q = P - 60 \implies Q_S = 0.5P - 30$.
-    Precio interno con arancel: $P_{int} = 100 + \tau$.
-    $M = Q_D - Q_S \implies M = (150 - 0.5(100+\tau)) - (0.5(100+\tau) - 30)$.
-    $M = 150 - 50 - 0.5\tau - 50 - 0.5\tau + 30 \implies \mathbf{M = 80 - \tau}$.
-* **b) Recaudación:** $Rec = \tau \cdot (80 - \tau) \implies \mathbf{Rec = 80\tau - \tau^2}$.
-* **c) Arancel Óptimo:** $\frac{dRec}{d\tau} = 80 - 2\tau = 0 \implies \mathbf{\tau^* = 40}$.
+**4.1 Mercado de Zapatos (Aranceles)**
+* **a)** Despejando: $Q_D = 100 - 0.5P, Q_S = P - 20$.
+Sin arancel ($P_M = 50$): $Q_D = 75, Q_S = 30 \implies$ **Importa 45**.
+Con arancel ($\tau = 10 \implies P_{int} = 60$): $Q_D = 70, Q_S = 40 \implies$ **Importa 30**.
 
-### Ejercicio 4.5: Cuota vs Arancel
-* **a) Cuota de 20:** $Q_D - Q_S = 20$. Usamos las funciones del ej. anterior:
-    $(150 - 0.5P) - (0.5P - 30) = 20 \implies 180 - P = 20 \implies \mathbf{P_{int} = 160}$.
-* **b) Arancel Equivalente:** Sabemos que $P_{int} = P_M + \tau \implies 160 = 100 + \tau \implies \mathbf{\tau = 60}$.
-* **c) Diferencia:** Con el arancel de \$60, las \$1200 de "sobreprecio" de importación (60x20) las **recauda el Estado** para gasto público. Con la cuota, ese dinero extra se lo embolsan los **importadores privados** que consiguieron las codiciadas licencias para importar las 20 bicis.
+**4.2 Externalidad y Sello IPCh**
+* No es eficiente porque el Costo Marginal Privado ignora el daño a la salud de la comunidad, causando una "sobreproducción". Los precios de libre mercado fallan porque no reflejan el verdadero costo social de esa industria.
 
-### Ejercicio 4.6: Laffer y Progresividad
-* **a) Curva de Laffer:** Si la tasa sube al 80%, el "Costo Marginal" de declarar los ingresos se vuelve altísimo para los millonarios. El incentivo a usar **elusión** (vacíos legales, paraísos fiscales) o **evasión** (fraude) aumenta exponencialmente. La base imponible (el dinero declarado) caerá tanto que, al multiplicarlo por el 80%, el Estado recaudará menos dinero total que cuando cobraba un 40%.
-* **b) Regresividad del IVA:** Un ciudadano de bajos ingresos gasta el 100% de su sueldo mensual para subsistir, pagando 19% de impuestos sobre *todo* su ingreso. Un superrico puede ahorrar el 60% de su dinero y gastar solo el 40%, pagando el 19% solo sobre ese 40%. En proporción a la riqueza total, **el pobre paga una fracción impositiva mucho mayor**, lo que va contra el Sello IPCh de equidad.
+**4.3 Evasión y Elusión**
+* **Evasión** es un delito (ocultar información). **Elusión** es usar vacíos legales. Ambas dañan la equidad tributaria y el espíritu de la ley que busca que todos aporten de manera progresiva.
 
-### Ejercicio 4.7: Impuesto Pigouviano
-* **a) Libre mercado:** $500 - 2Q = 100 + Q \implies 3Q = 400 \implies \mathbf{Q = 133.3}$.
-* **b) Óptimo Social:** El Costo Social es $100 + Q + \mathbf{60}$ (Daño). 
-    $CS = 160 + Q$.
-    Igualamos Demanda y Costo Social: $500 - 2Q = 160 + Q \implies 3Q = 340 \implies \mathbf{Q_{opt} = 113.3}$.
-* **c) El Impuesto:** Para obligar a la empresa a considerar el daño que hace (internalizar la externalidad), el impuesto específico ($t$) debe ser exactamente igual al daño marginal en el punto óptimo. Por lo tanto, **$t = \$60$**. 
-*(A diferencia de los impuestos normales que causan Deadweight Loss, este impuesto destruye transacciones que generaban más daño a la sociedad que beneficio al consumidor, **mejorando** la eficiencia del mercado).*
+**4.4 Apertura y Exportaciones de Vino**
+* **a)** Eq local cerrado: $30P = 900 \implies P = 30$. Como el precio mundial es mayor ($P_M = 40 > 30$), el país **Exporta**. A $P = 40$: $Q_S = 700, Q_D = 400$. Exportaciones = $700 - 400 =$ **300**.
+
+**4.5 Impuesto Pigouviano**
+* "Internaliza" el costo ambiental. En lugar de crear una pérdida de bienestar (como un impuesto normal), elimina las transacciones donde el Costo Social era mayor que el Beneficio Privado, corrigiendo así una falla del mercado.
+
+**4.6 Maximización de Recaudación Arancelaria**
+* **a)** Importaciones $M = Q_D - Q_S = (150 - 0.5P) - (0.5P - 30) = 180 - P$. Con arancel $P = 100 + \tau \implies M = 80 - \tau$. Recaudación = $80\tau - \tau^2$. Derivando: $80 - 2\tau = 0 \implies$ **$\tau = 40$**.
+
+**4.7 Cuotas vs Aranceles**
+* Una cuota de 20 y un arancel equivalente impactan igual a los precios y cantidades, pero el **arancel recauda fondos** para el Estado (gasto público), mientras que la cuota transfiere esas ganancias de sobreprecio directamente a los importadores privados.
+
+**4.8 Laffer y Progresividad**
+* Una tasa asfixiante del 80% desincentiva el trabajo y fomenta fuertemente la evasión/elusión. La "Base Imponible" cae tanto que al multiplicarla por el 80%, el producto final (la recaudación total) será menor que lo obtenido con una tasa razonable del 40%.
+
+**4.9 Cuantificación de Externalidad**
+* **a)** Costo Marginal Social ($CMS$) = Costo Privado ($100 + Q$) + Daño ($60$) = $160 + Q$. El óptimo social ocurre donde Demanda = $CMS$:
+$$500 - 2Q = 160 + Q \implies 3Q = 340 \implies Q_{social} = 113.3$$
