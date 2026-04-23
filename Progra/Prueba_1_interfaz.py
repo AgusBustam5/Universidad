@@ -6,11 +6,11 @@ class MiVentana(QWidget):
         super().__init__()
         #Definir geometria ventana
         #Parametros: (x_sup_izq, y_sup_izq, ancho, alto)
-        self.setGeometry()
+        self.setGeometry(200, 500, 800, 500)
 
-        self.setGeometry("Papelucho Mi Primera Ventana")
+        self.setWindowTitle("Papelucho Mi Primera Ventana")
 
-if __name__ == "main":
+if __name__ == "__main__":
     def hook(type, value, traceback):
         print(type)
         print(traceback)
@@ -19,6 +19,7 @@ if __name__ == "main":
     app = QApplication([])
     ventana = MiVentana()
     ventana.show()
+    print(ventana.pos())
     codigo = app.exec()
 
 
