@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "1617f00acbb7c572",
+    "type": "split",
+    "children": [
+      {
+        "id": "78debf4c654673ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "424104fcb530db55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Respuestas_guia_ejercicios"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b5af711e2e63e20a",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d3286dc0a7149d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d0d30e942fe5c4d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "87ce1d954e9ad429",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "1da79f94ba227c7e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bae0425303e84a9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a0b747f24216ea1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d46ee80721af08cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de Respuestas_guia_ejercicios"
+            }
+          },
+          {
+            "id": "995840430ba1463f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de Respuestas_guia_ejercicios"
+            }
+          },
+          {
+            "id": "8bf109cee5ace417",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "c79f6931cd5f589e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "c7e4fd6c5af3657b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de Respuestas_guia_ejercicios"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "424104fcb530db55",
+  "lastOpenFiles": [
+    "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.pdf",
+    "Calculo 2/I2/Guias/Guia_ejercicios_I2.pdf",
+    "Calculo 2/I2/Guias/Respuestas_guia_ejercicios.md",
+    "Calculo 2/I2/Guias/Guia_ejercicios_I2.md"
+  ]
+}
