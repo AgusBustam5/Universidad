@@ -79,6 +79,21 @@ def NodalForces(node, elem, f_ext, q_ext):
         
     return np.array(lista_r), np.array(lista_fuerzas)
 
+def PlotReticulado(node, elem):
+    x = []
+    y = []
+    for num_nodo in elem:
+        nodo1_x = node[num_nodo[0]][0]
+        nodo1_y = node[num_nodo[0]][1]
+        nodo2_x = node[num_nodo[1]][0]
+        nodo2_y = node[num_nodo[1]][1]
+        coord_x = np.array([nodo1_x, nodo2_x])
+        coord_y = np.array([nodo1_y, nodo2_y])
+        x.append(coord_x)
+        y.append(coord_y)
+        plt.plot(coord_y, coord_x, color="black")
+    return [x, y]
+
 def PolyPlot2D(e, node, poly):
     poligono = poly[e]
     x = []
@@ -94,6 +109,8 @@ def PolyPlot2D(e, node, poly):
     y.append(inicio_y)
 
     plt.plot(x, y, color="red")
+    plt.show()
+
 
 def PolyProps2D(e, node, poly):
     poligono = poly[e]
@@ -142,3 +159,5 @@ def Props2DGeometry(node, poly):
 
     return Area, centroide_x, centroide_y
 
+def Plot2DForces(node, poly, s):
+    
