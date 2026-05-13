@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import copy
+from mpl_toolkits.mplot3d import Axes3D
 
 def Sistema_equivalente(r, F, M, x):
     dimension = len(r[0])
@@ -98,10 +98,10 @@ def PolyPlot2D(e, node, poly):
     poligono = poly[e]
     x = []
     y = []
-
     for nodo in poligono:
-        x.append(node[nodo, 0])
-        y.append(node[nodo, 1])
+        pos = int(nodo)
+        x.append(node[pos][0])
+        y.append(node[pos][1])
     
     inicio_x = x[0]
     inicio_y = y[0]
@@ -109,8 +109,6 @@ def PolyPlot2D(e, node, poly):
     y.append(inicio_y)
 
     plt.plot(x, y, color="red")
-    plt.show()
-
 
 def PolyProps2D(e, node, poly):
     poligono = poly[e]
@@ -118,8 +116,9 @@ def PolyProps2D(e, node, poly):
     y = []
 
     for nodo in poligono:
-        x.append(node[nodo, 0])
-        y.append(node[nodo, 1])
+        pos = int(nodo)
+        x.append(node[pos][0])
+        y.append(node[pos][1])
 
     inicio_x = x[0]
     inicio_y = y[0]
@@ -129,7 +128,7 @@ def PolyProps2D(e, node, poly):
     Area = 0
     sum_centroide_x = 0
     sum_centroide_y = 0
-    for n in range(len(n) - 1):
+    for n in range(len(x) - 1):
         Area += (x[n] * y[n + 1] - x[n + 1] * y[n]) / 2
         sum_centroide_x += (x[n] + x[n + 1]) * (x[n] * y[n + 1] - x[n + 1] * y[n])
         sum_centroide_y += (y[n] + y[n + 1]) * (x[n] * y[n + 1] - x[n + 1] * y[n])
@@ -141,7 +140,7 @@ def PolyProps2D(e, node, poly):
 
 #Preguntar por show()
 def Plot2DGeometry(node, poly):
-    for pol in poly:
+    for pol in range(len(poly)):
         PolyPlot2D(pol, node, poly)
 
 def Props2DGeometry(node, poly):
@@ -160,4 +159,110 @@ def Props2DGeometry(node, poly):
     return Area, centroide_x, centroide_y
 
 def Plot2DForces(node, poly, s):
+    pass
+
+def MassCenter(node, poly, rho):
+    masa = 0
+    sumas_x = 0
+    sumas_y = 0
+
+    for e in range(len(poly)):
+        area, cent_x, cent_y = PolyProps2D(e, node, poly)
+        masa_poli = area * rho[e]
+        masa += masa_poli
+        sumas_x = masa_poli * cent_x
+        sumas_y = masa_poli * cent_y
+
+    cem_x = sumas_x / masa
+    cem_y = sumas_y / masa
+    return masa, (cem_x, cem_y)
+
+def FuerzaPoligonoP2(node, poly):
+    lista_fuerzas = []
+    lista_posiciones = []
+    mayor_fuerza = None
+    for e in range(len(poly)):
+        area, cent_x, cent_y = PolyProps2D(e, node, poly)
+        x = float(cent_x)
+        y = float(cent_y)
+        posicion_fuerza = [x, y, 0]
+        f_dist = 2*np.sin(x) + np.cos(y) + 3 * ((np.e) ** (-1/2 * (x ** 2 + y ** 2)))
+        f_res = f_dist * area
+        fuerza = float(f_res)
+        F = [0, 0, -fuerza]
+        lista_fuerzas.append(F)
+        lista_posiciones.append(posicion_fuerza)
+        if mayor_fuerza is None:
+            mayor_fuerza = fuerza
+            elem = e
+        elif mayor_fuerza < fuerza:
+            mayor_fuerza = fuerza
+            elem = e
+
+    return lista_posiciones, lista_fuerzas, elem
+
+def PolyPlot3D(e, node, poly, ax):
+    poligono = poly[e]
+    x = []
+    y = []
+    z = []
+    for nodo in poligono:
+        pos = int(nodo)
+        x.append(node[pos][0])
+        y.append(node[pos][1])
+        z.append(node[pos][2])
     
+    inicio_x = x[0]
+    inicio_y = y[0]
+    inicio_z = z[0]
+    x.append(inicio_x)
+    y.append(inicio_y)
+    z.append(inicio_z)
+
+    ax.plot(x, y, z, color="red")
+
+def Plot3DGeometry(node, poly):
+    figure_p3 = plt.figure()
+    ax = figure_p3.add_subplot(111, projection="3d")
+    for e in range(len(poly)):
+        PolyPlot3D(e, node, poly, ax)
+
+def Quadrilateral_Props(xeset):
+    v1 = np.array(xeset[0] - xeset[1])
+    v2 = np.array(xeset[0] - xeset[3])
+    cruz = np.cross(v1, v2)
+    area = np.linalg.norm(cruz)
+    v_normal_director = cruz / area
+    x_sum += 0
+    y_sum += 0
+    z_sum += 0
+    for punto in xeset:
+        x_sum += punto[0]
+        y_sum += punto[1]
+        z_sum += punto[2]
+
+    x = x_sum / 4
+    y = y_sum / 4
+    z = z_sum / 4
+
+    posicion = (x, y, z)
+    return area, posicion, v_normal_director
+
+
+def Plot3DForces(node, poly, s):
+    pass
+
+def WindPressure(alpha, h, v0, z):
+    velocidad = v0 * ((z / h) ** alpha)
+    presion = 0.613 * (velocidad ** 2)
+    return presion
+
+def WindEquivalentForces(xeset, dhat, P):
+    area, posicion, v_normal_director = Quadrilateral_Props(xeset)
+    fuerza = area * P
+    punto = np.dot(P, v_normal_director)
+    if punto < 0:
+        #Proyeccion vectorial de dhat en la normal del ventanal
+        mod_director = np.linalg.norm(v_normal_director)
+        proy_dhat = (punto / (mod_director ** 2)) * v_normal_director
+        return proy_dhat

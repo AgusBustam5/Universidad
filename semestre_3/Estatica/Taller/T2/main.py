@@ -1,7 +1,10 @@
 from funciones import *
 import numpy as np
 import matplotlib.pyplot as plt
-nodos = np.array([
+from mpl_toolkits.mplot3d import Axes3D
+import os.path
+path_actual = os.path.dirname(__file__)
+nodos_p1 = np.array([
     [0, 0], #0
     [0, 3], #1
     [0, 6], #2
@@ -28,7 +31,7 @@ nodos = np.array([
     [7, 30] #23
 ])
 
-elementos = np.array([
+elementos_p1 = np.array([
     [0, 1],
     [1, 2],
     [2, 3],
@@ -76,7 +79,7 @@ elementos = np.array([
     [23, 18]
 ])
 
-fuerzas = np.array([
+fuerzas_p1 = np.array([
     [-300, 150], #0
     [0, 0], #1
     [0, 0], #2
@@ -103,7 +106,7 @@ fuerzas = np.array([
     [0, 300] #23
 ])
 
-carga_distribuida = np.array([
+carga_distribuida_p1 = np.array([
     [0, -30],
     [0, -30],
     [0, -30],
@@ -150,12 +153,11 @@ carga_distribuida = np.array([
     [0, 0],
     [0, 0]
 ])
-plt.figure()
 momento = np.array([[0, 0]])
-r, f = NodalForces(nodos, elementos, fuerzas, carga_distribuida)
+r, f = NodalForces(nodos_p1, elementos_p1, fuerzas_p1, carga_distribuida_p1)
 F_resultante, momento_torsor, posicion_torsor = TorsorEquivalente(r, f, momento)
 plt.scatter(posicion_torsor[0][0], posicion_torsor[0][1], color="red", s=75, label="posicion torsor")
-coords = PlotReticulado(nodos, elementos)
+PlotReticulado(nodos_p1, elementos_p1)
 
 #Utilar ecuacion recta en base a vector R
 x = np.linspace(-3, 36, 100)
@@ -165,12 +167,109 @@ recta_torsor = desplazamiento_y + pendiente * x
 plt.plot(x, recta_torsor, color="green", label="Recta Torsor", linestyle="--")
 plt.axis([-1, 37, -1, 8])
 plt.grid(True)
-plt.show()
-print("Problema 1.B), solucion:\n")
+#plt.show()
+print("Problema 1.B), solucion:")
 print(f"El vector de la fuerza resultante es:  {F_resultante[0]}")
 print(f"El momento torsor del sistema es:  {momento_torsor[0]}")
-print(f"La posicion del torsor es:  {posicion_torsor[0]}")
+print(f"La posicion del torsor es:  {posicion_torsor[0]}\n")
 
 #Problema 2
 
 plt.clf()
+plt.figure()
+poly_2_lista = []
+path_poly_2 = os.path.join(path_actual, "POLY.txt")
+with open(path_poly_2, encoding="utf-8") as file:
+    for line in file:
+        linea_str = line.strip()
+        linea_lista = linea_str.split(" ")
+        x = float(linea_lista[0])
+        y = float(linea_lista[1])
+        z = float(linea_lista[2])
+        poly_2_lista.append([x, y, z])
+
+poly_2 = np.array(poly_2_lista)
+
+node_2_list = []
+path_node_2 = os.path.join(path_actual, "NODE.txt")
+with open(path_node_2, encoding="utf-8") as file:
+    for line in file:
+        linea_str = line.strip()
+        linea_lista = linea_str.split(" ")
+        x = float(linea_lista[0])
+        y = float(linea_lista[1])
+        node_2_list.append([x, y])
+
+node_2 = np.array(node_2_list)
+
+Area_p2, x_cent_p2, y_cent_p2 = Props2DGeometry(node_2, poly_2) #Calculo Area y centroides
+plt.grid(True)
+
+print(f"Problema 2,B,a):")
+print(f"Area Total figura:  {Area_p2}")
+print(f"Coordenadas centroide:  ({x_cent_p2}, {y_cent_p2})\n")
+
+Plot2DGeometry(node_2, poly_2)
+plt.show()
+
+rho_2_lista = []
+path_rho_2 = os.path.join(path_actual, "rho.txt")
+with open(path_rho_2) as file:
+    for line in file:
+        linea_str = line.strip()
+        num = float(linea_str)
+        rho_2_lista.append([num])
+    
+rho_2 = np.array(rho_2_lista)
+
+masa_total_p2, cem_p2 = MassCenter(node_2, poly_2, rho_2)
+print(f"Pregunta 2,B,b):")
+print(f"Masa total: {masa_total_p2}")
+print(f"Ubicacion centro de masa: ({cem_p2[0][0]}, {cem_p2[1][0]})")
+
+momento_3d = np.array([[0, 0, 0]], dtype=float)
+r_f_dist_p2, f_dist_p2, elem_res = FuerzaPoligonoP2(node_2, poly_2)
+sis_equi_p2 = TorsorEquivalente(r_f_dist_p2, f_dist_p2, momento_3d)
+F_res_p2 = sis_equi_p2[0][0]
+posicion_aplicacion_p2 = sis_equi_p2[2][0]
+pos_x = posicion_aplicacion_p2[0]
+pos_y = posicion_aplicacion_p2[1]
+pos_z = posicion_aplicacion_p2[2]
+print(f"La fuerza resultante de las cargas es:  {F_res_p2}")
+print(f"La fuerza equivalente se aplica en el punto: ({pos_x}, {pos_y}, {pos_z})")
+
+print(f"Pregunta 2,B,d):")
+print(f"Indice de elemento resultante:  {elem_res}")
+
+#Problema 3
+
+plt.clf()
+
+poly_3_lista = []
+path_poly_3 = os.path.join(path_actual, "POLY2.txt")
+with open(path_poly_3, encoding="utf-8") as file:
+    for line in file:
+        linea_str = line.strip()
+        linea_lista = linea_str.split(" ")
+        x = float(linea_lista[0])
+        y = float(linea_lista[1])
+        z = float(linea_lista[2])
+        poly_3_lista.append([x, y, z])
+
+poly_3 = np.array(poly_3_lista)
+
+node_3_list = []
+path_node_3 = os.path.join(path_actual, "NODE2.txt")
+with open(path_node_3, encoding="utf-8") as file:
+    for line in file:
+        linea_str = line.strip()
+        linea_lista = linea_str.split(" ")
+        x = float(linea_lista[0])
+        y = float(linea_lista[1])
+        z = float(linea_lista[2])
+        node_3_list.append([x, y, z])
+
+node_3 = np.array(node_3_list)
+
+Plot3DGeometry(node_3, poly_3)
+plt.show()
