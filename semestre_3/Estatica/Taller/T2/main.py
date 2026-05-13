@@ -235,9 +235,12 @@ posicion_aplicacion_p2 = sis_equi_p2[2][0]
 pos_x = posicion_aplicacion_p2[0]
 pos_y = posicion_aplicacion_p2[1]
 pos_z = posicion_aplicacion_p2[2]
+print(f"Problema 2,B,c):")
 print(f"La fuerza resultante de las cargas es:  {F_res_p2}")
-print(f"La fuerza equivalente se aplica en el punto: ({pos_x}, {pos_y}, {pos_z})")
+print(f"La fuerza equivalente se aplica en el punto: ({pos_x}, {pos_y}, {pos_z})\n")
 
+
+Plot2DForces(node_2, poly_2, f_dist_p2)
 print(f"Pregunta 2,B,d):")
 print(f"Indice de elemento resultante:  {elem_res}")
 

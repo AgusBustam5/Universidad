@@ -159,6 +159,31 @@ def Props2DGeometry(node, poly):
     return Area, centroide_x, centroide_y
 
 def Plot2DForces(node, poly, s):
+    figura, ax = plt.subplots()
+    for e in range(len(poly)):
+        f_poli = s[e]
+        poligono = poly[int(e)]
+        x = []
+        y = []
+        z = []
+        z_anterior = 0
+        for nodo in poligono:
+            polig = []
+            polig.append(node[pos])
+            pos = int(nodo)
+            x_pos = node[pos][0]
+            y_pos = node[pos][1]
+            z_pos = 2 * np.sin(x_pos) + np.cos(y_pos) + ((3 * np.e)**(-1/2 * (x_pos**2 + y_pos**2)))
+            x.append(x_pos)
+            y.append(y_pos)
+    inicio_x = x[0]
+    inicio_y = y[0]
+    x.append(inicio_x)
+    y.append(inicio_y)
+    xv, yv = np.meshgrid(x, y)
+    contur = ax.contour(xv, yv, z)
+    ax.clabel(contur, contur.levels, inline=True)
+    ax.show()
     pass
 
 def MassCenter(node, poly, rho):
