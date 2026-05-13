@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+from matplotlib.collections import PatchCollection
 from mpl_toolkits.mplot3d import Axes3D
 
 def Sistema_equivalente(r, F, M, x):
@@ -158,32 +160,34 @@ def Props2DGeometry(node, poly):
 
     return Area, centroide_x, centroide_y
 
+def PlotPoligono_Fuerza(e, node, poly):
+    orden = poly[e]
+    nodos_poligono = []
+    for n in orden:
+        pol = int(n)
+        nodos_poligono.append(node[pol])
+    
+    vertices_poligono = np.array(nodos_poligono)
+    poligono = Polygon(vertices_poligono, closed=True)
+    return poligono
+
+
 def Plot2DForces(node, poly, s):
-    figura, ax = plt.subplots()
+    fig, ax = plt.subplots()
+    parches = []
     for e in range(len(poly)):
-        f_poli = s[e]
-        poligono = poly[int(e)]
-        x = []
-        y = []
-        z = []
-        z_anterior = 0
-        for nodo in poligono:
-            polig = []
-            polig.append(node[pos])
-            pos = int(nodo)
-            x_pos = node[pos][0]
-            y_pos = node[pos][1]
-            z_pos = 2 * np.sin(x_pos) + np.cos(y_pos) + ((3 * np.e)**(-1/2 * (x_pos**2 + y_pos**2)))
-            x.append(x_pos)
-            y.append(y_pos)
-    inicio_x = x[0]
-    inicio_y = y[0]
-    x.append(inicio_x)
-    y.append(inicio_y)
-    xv, yv = np.meshgrid(x, y)
-    contur = ax.contour(xv, yv, z)
-    ax.clabel(contur, contur.levels, inline=True)
-    ax.show()
+        print(node)
+        poligono = PlotPoligono_Fuerza(e, node, poly)
+        parches.append(poligono)
+
+    p = PatchCollection(parches, cmap="plasma")
+    magnitudes = [np.linalg.norm(f) for f in s]
+
+    p.set_array(np.array(magnitudes))
+    ax.add_collection(p)
+    ax.autoscale()
+    plt.colorbar(p, label="Magnitud Fuerzas")
+    plt.show()
     pass
 
 def MassCenter(node, poly, rho):
