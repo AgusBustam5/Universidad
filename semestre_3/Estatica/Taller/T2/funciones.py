@@ -277,8 +277,8 @@ def Quadrilateral_Props(xeset):
     posicion = (x, y, z)
     return area, posicion, v_normal_director
 
-
 def Plot3DForces(node, poly, s):
+    
     pass
 
 def WindPressure(alpha, h, v0, z):
