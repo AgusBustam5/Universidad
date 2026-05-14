@@ -274,5 +274,21 @@ with open(path_node_3, encoding="utf-8") as file:
 
 node_3 = np.array(node_3_list)
 
-Plot3DGeometry(node_3, poly_3)
+alpha_p3 = 0.16
+h_p3 = 15
+
+v_0_p3_1 = 12
+vd_p3_1 = np.array([[-1, 0, 0]])
+v_0_p3_2 = 25
+vd_p3_2 = np.array([[0.5, -(0.5 * np.sqrt(3)), 0]])
+v_0_p3_3 = 8
+vd_p3_3 = np.array([[0.5, (0.5 * np.sqrt(3)), 0]])
+estructura_p3 = []
+for nod in poly_3:
+    poligono = []
+    for punto in nod:
+        p_poligono = node_3[int(punto)]
+        poligono.append(p_poligono)
+    
+Plot3DForces(node_3, poly_3, )
 plt.show()

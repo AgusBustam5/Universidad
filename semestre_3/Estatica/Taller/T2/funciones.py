@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
-from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+import matplotlib.cm as cm
 
 def Sistema_equivalente(r, F, M, x):
     dimension = len(r[0])
@@ -160,7 +161,7 @@ def Props2DGeometry(node, poly):
 
     return Area, centroide_x, centroide_y
 
-def PlotPoligono_Fuerza(e, node, poly):
+def PlotPoligono_Fuerza_2D(e, node, poly):
     orden = poly[e]
     nodos_poligono = []
     for n in orden:
@@ -177,7 +178,7 @@ def Plot2DForces(node, poly, s):
     parches = []
     for e in range(len(poly)):
         print(node)
-        poligono = PlotPoligono_Fuerza(e, node, poly)
+        poligono = PlotPoligono_Fuerza_2D(e, node, poly)
         parches.append(poligono)
 
     p = PatchCollection(parches, cmap="plasma")
@@ -278,8 +279,23 @@ def Quadrilateral_Props(xeset):
     return area, posicion, v_normal_director
 
 def Plot3DForces(node, poly, s):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection="3d")
+    poligonos = []
+    for vertice in poly:
+        poligono = []
+        for nodo in vertice:
+            punt = node[int(nodo)]
+            poligono.append(punt)
+        poligonos.append(poligono)
     
-    pass
+    cmap = cm.plasma
+    valores = [cmap(fuerza) for fuerza in s]
+    coleccion = Poly3DCollection(poligonos, facecolors=valores)
+
+    ax.add_collection3d(coleccion)
+
+    plt.show()
 
 def WindPressure(alpha, h, v0, z):
     velocidad = v0 * ((z / h) ** alpha)
@@ -289,7 +305,8 @@ def WindPressure(alpha, h, v0, z):
 def WindEquivalentForces(xeset, dhat, P):
     area, posicion, v_normal_director = Quadrilateral_Props(xeset)
     fuerza = area * P
-    punto = np.dot(P, v_normal_director)
+    vector_fuerza = fuerza * dhat
+    punto = np.dot(vector_fuerza, v_normal_director)
     if punto < 0:
         #Proyeccion vectorial de dhat en la normal del ventanal
         mod_director = np.linalg.norm(v_normal_director)
