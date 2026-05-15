@@ -177,7 +177,6 @@ def Plot2DForces(node, poly, s):
     fig, ax = plt.subplots()
     parches = []
     for e in range(len(poly)):
-        print(node)
         poligono = PlotPoligono_Fuerza_2D(e, node, poly)
         parches.append(poligono)
 

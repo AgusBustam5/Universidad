@@ -167,7 +167,7 @@ recta_torsor = desplazamiento_y + pendiente * x
 plt.plot(x, recta_torsor, color="green", label="Recta Torsor", linestyle="--")
 plt.axis([-1, 37, -1, 8])
 plt.grid(True)
-#plt.show()
+plt.show()
 print("Problema 1.B), solucion:")
 print(f"El vector de la fuerza resultante es:  {F_resultante[0]}")
 print(f"El momento torsor del sistema es:  {momento_torsor[0]}")
@@ -210,6 +210,7 @@ print(f"Area Total figura:  {Area_p2}")
 print(f"Coordenadas centroide:  ({x_cent_p2}, {y_cent_p2})\n")
 
 Plot2DGeometry(node_2, poly_2)
+plt.axis([-2, 38, -2, 42])
 plt.show()
 
 rho_2_lista = []
