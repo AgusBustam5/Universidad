@@ -255,10 +255,8 @@ with open(path_poly_3, encoding="utf-8") as file:
     for line in file:
         linea_str = line.strip()
         linea_lista = linea_str.split(" ")
-        x = float(linea_lista[0])
-        y = float(linea_lista[1])
-        z = float(linea_lista[2])
-        poly_3_lista.append([x, y, z])
+        puntos_nodos = [float(n_3) for n_3 in linea_lista]
+        poly_3_lista.append(puntos_nodos)
 
 poly_3 = np.array(poly_3_lista)
 
@@ -279,17 +277,104 @@ alpha_p3 = 0.16
 h_p3 = 15
 
 v_0_p3_1 = 12
-vd_p3_1 = np.array([[-1, 0, 0]])
+vd_p3_1 = np.array([-1, 0, 0])
 v_0_p3_2 = 25
-vd_p3_2 = np.array([[0.5, -(0.5 * np.sqrt(3)), 0]])
+vd_p3_2 = np.array([0.5, -(0.5 * np.sqrt(3)), 0])
 v_0_p3_3 = 8
-vd_p3_3 = np.array([[0.5, (0.5 * np.sqrt(3)), 0]])
-estructura_p3 = []
+vd_p3_3 = np.array([0.5, (0.5 * np.sqrt(3)), 0])
+
+#Asumiendo figuras rectangulares
+plt.clf()
+poligonos_centroide = []
 for nod in poly_3:
-    poligono = []
+    x_sum_pol = 0
+    y_sum_pol = 0
+    z_sum_pol = 0
     for punto in nod:
         p_poligono = node_3[int(punto)]
-        poligono.append(p_poligono)
-    
-Plot3DForces(node_3, poly_3, )
+        x_sum_pol += p_poligono[0]
+        y_sum_pol += p_poligono[1]
+        z_sum_pol += p_poligono[2]
+    centroide_x = x_sum_pol / len(nod)
+    centroide_y = y_sum_pol / len(nod)
+    centroide_z = z_sum_pol / len(nod)
+    poligonos_centroide.append([centroide_x, centroide_y, centroide_z])
+
+Plot3DGeometry(node_3, poly_3)
+
+fuerzas_viento_p3_I = []
+for e in range(len(poligonos_centroide)):
+    Presion_p3 = WindPressure(alpha_p3, h_p3, v_0_p3_1, poligonos_centroide[e][2])
+    nodos_a_elegir = poly_3[e]
+    xeset_p3 = []
+    for nodo in nodos_a_elegir:
+        nodo = int(nodo)
+        punto = node_3[nodo]
+        xeset_p3.append(punto)
+        
+    fuerzas_presion_p3_I = WindEquivalentForces(xeset_p3, vd_p3_1, Presion_p3)
+    if fuerzas_presion_p3_I is None:
+        fuerzas_viento_p3_I.append([0, 0, 0])
+    else:
+        fuerzas_viento_p3_I.append(fuerzas_presion_p3_I)
+
+sist_equi_p3_I = Sistema_equivalente(poligonos_centroide, fuerzas_viento_p3_I, np.array([[0, 0, 0]], dtype=float), np.array([[0, 0, 0]], dtype=float))
+
+fuerzas_viento_p3_II = []
+for e in range(len(poligonos_centroide)):
+    Presion_p3 = WindPressure(alpha_p3, h_p3, v_0_p3_2, poligonos_centroide[e][2])
+    nodos_a_elegir = poly_3[e]
+    xeset_p3 = []
+    for nodo in nodos_a_elegir:
+        nodo = int(nodo)
+        punto = node_3[nodo]
+        xeset_p3.append(punto)
+        
+    fuerzas_presion_p3_II = WindEquivalentForces(xeset_p3, vd_p3_2, Presion_p3)
+    if fuerzas_presion_p3_II is None:
+        fuerzas_viento_p3_II.append([0, 0, 0])
+    else:
+        fuerzas_viento_p3_II.append(fuerzas_presion_p3_II)
+
+sist_equi_p3_II = Sistema_equivalente(poligonos_centroide, fuerzas_viento_p3_II, np.array([[0, 0, 0]], dtype=float), np.array([[0, 0, 0]], dtype=float))
+
+fuerzas_viento_p3_III = []
+for e in range(len(poligonos_centroide)):
+    Presion_p3 = WindPressure(alpha_p3, h_p3, v_0_p3_3, poligonos_centroide[e][2])
+    nodos_a_elegir = poly_3[e]
+    xeset_p3 = []
+    for nodo in nodos_a_elegir:
+        nodo = int(nodo)
+        punto = node_3[nodo]
+        xeset_p3.append(punto)
+        
+    fuerzas_presion_p3_III = WindEquivalentForces(xeset_p3, vd_p3_3, Presion_p3)
+    if fuerzas_presion_p3_III is None:
+        fuerzas_viento_p3_III.append([0, 0, 0])
+    else:
+        fuerzas_viento_p3_III.append(fuerzas_presion_p3_III)
+
+sist_equi_p3_III = Sistema_equivalente(poligonos_centroide, fuerzas_viento_p3_III, np.array([[0, 0, 0]], dtype=float), np.array([[0, 0, 0]], dtype=float))
+
+print(f"Pregunta 3.c)")
+print(f" Sistema I")
+print(f"  Fuerza resultante Sistema:  {sist_equi_p3_I[0][0]}")
+print(f"  Momento resultante Sistema:  {sist_equi_p3_I[1][0]}\n")
+
+print(f" Sistema II")
+print(f"  Fuerza resultante Sistema:  {sist_equi_p3_II[0][0]}")
+print(f"  Momento resultante Sistema:  {sist_equi_p3_II[1][0]}\n")
+
+print(f" Sistema III")
+print(f"  Fuerza resultante Sistema:  {sist_equi_p3_III[0][0]}")
+print(f"  Momento resultante Sistema:  {sist_equi_p3_III[1][0]}\n")
+
+Plot3DForces(node_3, poly_3, fuerzas_viento_p3_I)
 plt.show()
+plt.clf()
+Plot3DForces(node_3, poly_3, fuerzas_viento_p3_II)
+plt.show()
+plt.clf()
+Plot3DForces(node_3, poly_3, fuerzas_viento_p3_III)
+plt.show()
+plt.clf()

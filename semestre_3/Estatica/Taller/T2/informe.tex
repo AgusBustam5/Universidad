@@ -5,7 +5,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{}
+\usepackage{hyperref}
 
 \title{Tarea 2: Sistemas Equivalentes \\ [0.5em] \large ICE2006 - 1}
 \author{Agustin Bustamante}
@@ -103,16 +103,16 @@ Teniendo en consideración que para la resultante de fuerza emitida en un área 
 	\label{fig:reticulado_P1}
 \end{figure}
 
-\subsection{Problema 2: }
+\subsection{Problema 2: Centros de Masa}
 \begin{table}[htbp]
 	\centering
 	\caption{Resultados internos estructura Problema 2}
 	\label{tab: Res_pt1_P2}
 	\begin{tabular}{lcccc}
 		\toprule
-		\textbf{sistema} & $A_t$ (\text{$m^2$}) & $\vec{X}_{cen}$ (\text{m}) & ${M}_t$ (\text{Kg}) & $X_{ct}$\\
+		\textbf{sistema} & $A_t$ (\text{$m^2$}) & $\vec{X}_{cen}$ (\text{m}) & ${M}_t$ (\text{kg}) & $\vec{X}_{ct}$\\
 		\midrule
-		Sistema 2 & 1043.792 & (18.829, 20.096, 0) & 311.413 & (0.001, 0.005, 0) \\
+		Sistema 2 & 1043.792 & (18.829, 20.096, 0) & 311.413 & (18.888, 20.077, 0) \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -139,14 +139,107 @@ Teniendo en consideración que para la resultante de fuerza emitida en un área 
 
 \begin{table}[htbp]
 	\centering
-	\caption{Resultados internos estructura Problema 2}
+	\caption{Indice numerado sometido a mayor fuerza}
 	\label{tab: Res_pt1_P2}
-	\begin{tabular}{l}
+	\begin{tabular}{lcc}
 		\toprule
-		\textbf{Indice elemento sometido a mayor fuerza}\\
+		 & \textbf{Indice elemento sometido a mayor fuerza} & \\
 		\midrule
-		\textbf{5275}\\
+		 &5275& \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\newpage
+
+\subsection{Problema 3: Sistemas resultantes mediante discretización}
+\begin{table}[htbp]
+	\centering
+	\caption{Resultados Presión del viento sistemas distintos}
+	\label{tab: Tabla_res_P3}
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{sistema} & \textbf{I} & \textbf{II} & \textbf{III} \\
+		\midrule
+		$\vec{F}_r$ (\textbf{N}) & (-4534099.623, -95034.753, 0) & (9365266.287, -15131910.370, 0) & (1035779.096, 1615578.246, 0) \\
+		$\vec{M}_r$ (\textbf{$N m$}) & (2.641, -1.406, 4.491) & (4.69, 2.929, 1.492) & (-5.014, 3.183, -3.521) \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{PlotBaseP3.png}
+	\caption{Representación figura en 3D}
+	\label{fig:Ploteo estructura base}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{FiguraSistemaIP3.png}
+	\caption{Mapa de calor sistema I}
+	\label{fig:mapa calor P3 n1}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{FiguraSistemaIIP3.png}
+	\caption{Mapa de calor sistema II}
+	\label{fig:mapa calor P3 n2}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{FiguraSistemaIIIP3.png}
+	\caption{Mapa de calor sistema III}
+	\label{fig:mapa calor P3 n3}
+\end{figure}
+
+\section{Análisis de Resultados}
+\subsection{Problema 1}
+El resultado de la fuerza resultante \textbf{($\vec{F_r}$)} es coherente con lo esperado al visualizar el sistema de reticulado ya que la mayoría de la fuerza aplicada proviene de la carga distribuida a lo largo del puente, la cual tiene componente negativo en el eje y. Respecto al momento torsor \textbf{($M_t$)} podemos afirmar que el resultado es correcto ya que en sistemas 2D \textbf{(x, y)} el momento resultante solamente puede ser aplicado en el eje z, al ser este aplicado unicamente en el eje perpendicular al plano visto, es imposible tener un momento paralelo a la fuerza resultante (Momento torsor).
+
+La recta por la que actúa el torsor intersecta a la recta del eje  en el punto \textbf{(5.263, 0, 0)(m)}. Lo cual es coherente debido a las fuerzas externas aplicadas en el eje Y, teniendo en consideración que un sistema que cuenta solamente con fuerza distribuida a lo largo de este cuenta con su torsor ubicado justo en el centro, podemos ver, de manera logica, que el sistema se desplaza, de este punto central, en la direccion del punto en que se ejerce mayor fuerza en el eje y, el cual seria en este caso la fuerza de 750 \textbf{(N)}.
+
+\subsection{Problema 2}
+Se puede apreciar para la estructura de área \textbf{1043.792 $(m^2)$} y masa \textbf{311.413} (kg) que el centro de masa de la estructura \textbf{(18.888, 20.077)(m)} generada por polígonos se encuentra sumamente cercano a la posición del centroide de la estructura \textbf{(18.829, 20.096)}, pese a la densidad variable de la estructura, esto se debe a que por mucho que fuese variable la masa en función de la ubicación evaluada en muy pocos puntos esta diferencia resulta remarcarble y los puntos que si se pueden apreciar diferencias notorias de masa, gracias al mapa de calor de la estructura (Figura 2), se encuentran distribuidos de manera relativamente simétrica respecto al centroide, es por esto que pese a las masas variables. El desplazamiento de la posición del centro de masa es casi nulo respecto a la posición del centroide.
+
+Por otra parte, la carga distribuida a lo largo del plano genera una fuerza resultante de -120.609 (\textbf{N}) en el eje z- La posicion de respectivo vector producto de la carga, se encuentra vinculada a la función.
+\begin{equation}
+	w(x, y) = 2sin(x) + cos(y) + 3e^{-0.5(x^2+y^2)} (N/m^2)
+\end{equation}
+El polígono que registra la mayor tasa de carga neta sobre su superficie, corresponde al indexado con número 5275, esto debido a su extension superficial, ya que a mayor área hay mayor contacto con la superficie, y a que de los puntos evaluado este contiene la mayor carga descrita por la función (9).
+
+\subsection{Problema 3}
+Mediante el análisis tridimensional de las cargas ejercidas por el viento sobre la estructura podemos extrapolar una dependencia directa de los esfuerzos realizados por la base como reacción ante tanto la velocidad como la orientación del flujo de aire.
+
+De los resultados se puede notar una alta cantidad de fuerza ejercidas por las corrientes de viento, las cuales deben ser anuladas por la rección respectiva de la base de la estructura. Ademas de esto, podemos apreciar que debido a las grandes magnitudes de fuerza ejercidas por las corrientes de viento, los momentos resultantes para todos los sistemas mantienen valores considerablemente mayores esto sucede por la gran distancia existente entre la base de la estructura y su punto mas alto, el cual corresponde al punto de mayor velocidad en el flujo del viento, donde la diferencia de velocidad entre este punto y otros es considerable debido a la naturaleza exponencial del calculo de la presión ejercida por el flujo de viento (8).
+
+Pese a las fuertes cargas que debe soportar la base del rascacielos, podemos afirmar que la geometría de este es completamente beneficiosa para reducir las cargas potenciales que recibiría con alguna geometría distinta, ya que al reducir su área de contacto contacto con las corrientes de aire a medida que aumenta su altura se evita tener que tratar con momentos y fuerzas mucho mayores.
+
+\section{Conclusión}
+El desarrollo de este informe permitió aplicar conceptos de estática a través de herramientas computacionales mediante el lenguaje de programación Python, del análisis riguroso realizado de los tres problemas planteados permitió extraer las siguientes conclusiones:
+\begin{itemize}
+	\item El análisis de la estructura reticulizada bidimencional demostró la eficacia de la representación de cargas distribuidas mediante fuerzas equivalentes en sus respectivos nodos. Aparte de esto se demostró que para sistemas bidimensionales planos el momento torsor siempre sera un vector nulo, debido a su incapacidad geométrica de tener una componente paralela a la fuerza resultante. También se pudo demostrar la relación entre el desplazamiento de la posición del torsor mediante la aplicación de fuerzas externas.
+	
+	\item Mediante la implementación de teorema de Green-Stokes utilizado para el calculo de áreas y centroides, pudimos demostrar que para cuerpos con densidades variables pero cercanas a la homogeneidad existe una fuerte correlación entre la posición del centroide de la estructura y su respectivo centro de masa
+	
+	\item Mediante el análisis tridimensional del rascacielos pudimos comprender la enorme influencia que ejercen tanto la velocidad como la dirección del viento a la estabilidad de estructuras, principalmente a grandes alturas, esto debido a la naturaleza exponencial del calculo de presión. Ademas, se concluyo que la geometría escalonada del Burj Khalifa, es un factor clave ya que al reducir su área de exposición para puntos de gran altura se evitan impactos considerables de momento y fuerzas indeseados.	
+\end{itemize}
+
+\section{Declaración uso IA}
+Para la resolución de esta tarea se utilizo inteligencia artificial con los siguientes propósitos:
+\begin{itemize}
+	\item Comprención de conceptos relacionados con contenidos de estática
+	\item Listado de códigos utilizables para el lenguaje de escritura LaTeX
+\end{itemize}
+
+\section{consideraciones}
+Para la generación de imágenes mediante código Python realice una investigación propia respecto a librerías y códigos utilizables, adjunto enlaces con la información externa al curso a modo de bibliografía ya que no se si esta es la forma estandarizada para el curso.
+
+\section{Bibliografía}
+\begin{itemize}
+	\item Matplotlib documentation — Matplotlib 3.10.9 documentation. (s. f.). \url{https://matplotlib.org/stable/}
+	\item pyplot — Matplotlib 1.4.2 documentation. (s. f.). \url{https://matplotlib.org/1.4.2/api/pyplot_api.html#matplotlib.pyplot.plot}
+	\item NumPy documentation — NumPy v2.4 Manual. (s. f.). \url{https://numpy.org/doc/stable/index.html}
+
+\end{itemize}
+
 \end{document}

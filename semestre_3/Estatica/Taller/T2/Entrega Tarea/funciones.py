@@ -143,6 +143,7 @@ def PolyProps2D(e, node, poly):
 
 #Preguntar por show()
 def Plot2DGeometry(node, poly):
+    plt.clf()
     for pol in range(len(poly)):
         PolyPlot2D(pol, node, poly)
 
@@ -174,6 +175,7 @@ def PlotPoligono_Fuerza_2D(e, node, poly):
 
 
 def Plot2DForces(node, poly, s):
+    plt.clf()
     fig, ax = plt.subplots()
     parches = []
     for e in range(len(poly)):
@@ -199,8 +201,8 @@ def MassCenter(node, poly, rho):
         area, cent_x, cent_y = PolyProps2D(e, node, poly)
         masa_poli = area * rho[e]
         masa += masa_poli
-        sumas_x = masa_poli * cent_x
-        sumas_y = masa_poli * cent_y
+        sumas_x += masa_poli * cent_x
+        sumas_y += masa_poli * cent_y
 
     cem_x = sumas_x / masa
     cem_y = sumas_y / masa
@@ -251,10 +253,14 @@ def PolyPlot3D(e, node, poly, ax):
     ax.plot(x, y, z, color="red")
 
 def Plot3DGeometry(node, poly):
+    plt.clf()
     figure_p3 = plt.figure()
     ax = figure_p3.add_subplot(111, projection="3d")
     for e in range(len(poly)):
         PolyPlot3D(e, node, poly, ax)
+    
+    plt.show()
+    plt.clf()
 
 def Quadrilateral_Props(xeset):
     v1 = np.array(xeset[0] - xeset[1])
@@ -262,9 +268,9 @@ def Quadrilateral_Props(xeset):
     cruz = np.cross(v1, v2)
     area = np.linalg.norm(cruz)
     v_normal_director = cruz / area
-    x_sum += 0
-    y_sum += 0
-    z_sum += 0
+    x_sum = 0
+    y_sum = 0
+    z_sum = 0
     for punto in xeset:
         x_sum += punto[0]
         y_sum += punto[1]
@@ -277,23 +283,45 @@ def Quadrilateral_Props(xeset):
     posicion = (x, y, z)
     return area, posicion, v_normal_director
 
+def ExtraerVertices_3D(e, node, poly):
+    orden = poly[e]
+    nodos_poligono = []
+    for n in orden:
+        pos = int(n)
+        nodo_poligono = node[pos]
+        nodos_poligono.append(nodo_poligono)
+    return np.array(nodos_poligono)
+
 def Plot3DForces(node, poly, s):
+    plt.clf()
     fig = plt.figure()
     ax = fig.add_subplot(111, projection="3d")
     poligonos = []
-    for vertice in poly:
-        poligono = []
-        for nodo in vertice:
-            punt = node[int(nodo)]
-            poligono.append(punt)
-        poligonos.append(poligono)
+    for e in range(len(poly)):
+        esquinas = ExtraerVertices_3D(e, node, poly)
+        poligonos.append(esquinas)
     
-    cmap = cm.plasma
-    valores = [cmap(fuerza) for fuerza in s]
-    coleccion = Poly3DCollection(poligonos, facecolors=valores)
+    magnit = []
+    for f in s:
+        modu = np.linalg.norm(f)
+        magnit.append(modu)
+
+    magnit_array = np.array(magnit)
+
+    coleccion = Poly3DCollection(poligonos, cmap="plasma")
+    coleccion.set_array(magnit_array)
 
     ax.add_collection3d(coleccion)
 
+    ax.set_xlim([np.min(node[:,0]), np.max(node[:,0])])
+    ax.set_ylim([np.min(node[:,1]), np.max(node[:,1])])
+    ax.set_zlim([np.min(node[:,2]), np.max(node[:,2])])
+
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+    ax.set_zlabel("Z")
+
+    fig.colorbar(coleccion, ax=ax, label="Magnitud de las fuerzas")
     plt.show()
 
 def WindPressure(alpha, h, v0, z):
