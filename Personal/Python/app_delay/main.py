@@ -1,5 +1,6 @@
 import flet as ft
-import requests
+import urllib.request
+import json
 
 def main(page: ft.Page):
 
@@ -39,22 +40,23 @@ def main(page: ft.Page):
         try:
 
             esp32_url = "http://192.168.4.1/api/estado"
-            respuesta = requests.get(esp32_url, timeout=3)
+            with urllib.request.urlopen(esp32_url, timeout=3) as respuesta:
 
-            if respuesta.status_code == 200:
+                if respuesta.status == 200:
 
-                datos_json = respuesta.json()
+                    datos_crudos = respuesta.read().decode("utf-8")
+                    datos_json = json.loads(datos_crudos)
 
-                valor_estado.value = str(datos_json.get("estado", "Error")).capitalize()
-                valor_bateria.value = f"{datos_json.get('bateria', 0)} %"
-                valor_sd.value = str(datos_json.get("tarjeta_sd", "Error")).capitalize()
+                    valor_estado.value = str(datos_json.get("estado", "Error")).capitalize()
+                    valor_bateria.value = f"{datos_json.get('bateria', 0)} %"
+                    valor_sd.value = str(datos_json.get("tarjeta_sd", "Error")).capitalize()
 
-                texto_conexion.value = "¡Sincronizado con éxito!"
-                texto_conexion.color = ft.colors.GREEN
-            
-            else:
-                texto_conexion.value = f"Error del servidor: {respuesta.status_code}"
-                texto_conexion.color = ft.colors.RED
+                    texto_conexion.value = "¡Sincronizado con éxito!"
+                    texto_conexion.color = ft.colors.GREEN
+
+                else:
+                    texto_conexion.value = f"Error del servidor: {respuesta.status}"
+                    texto_conexion.color = ft.colors.RED
         
         except Exception as error:
             texto_conexion.value = "No se logro encontrar la red del pedal."
