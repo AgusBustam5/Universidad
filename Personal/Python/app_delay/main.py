@@ -5,25 +5,25 @@ def main(page: ft.Page):
 
     page.title = "Control de Pedal ESP32"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.vertical_alignment = ft.CrossAxisAlignment.CENTER
-    page.window_wisth = 400
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.window_width = 400
     page.window_height = 700
 
     texto_conexion = ft.Text("Esperando la conexión...", size=16, color=ft.colors.RED)
 
-    valor_estado = ft.Text("-", size=18, weight=ft.FontWeight.BOLD, color=ft.color.BLUE)
+    valor_estado = ft.Text("-", size=18, weight=ft.FontWeight.BOLD, color=ft.colors.BLUE)
     valor_bateria = ft.Text("-", size=18, weight=ft.FontWeight.BOLD)
     valor_sd = ft.Text("-", size=18, weight=ft.FontWeight.BOLD)
 
-    panel_info = ft.card(
+    panel_info = ft.Card(
         elevation=5,
         content=ft.Container(
             padding=20,
             width=320,
             content=ft.Column(
                 [
-                    ft.row([ft.Icon(ft.icons.SPEED), ft.Text("Telemetria en Vivo", size=20, weight=ft.FontWeight.BOLD)], alignment=ft.MainAxisAlignment.CENTER),
-                    ft.DIvider(),
+                    ft.Row([ft.Icon(ft.icons.SPEED), ft.Text("Telemetria en Vivo", size=20, weight=ft.FontWeight.BOLD)], alignment=ft.MainAxisAlignment.CENTER),
+                    ft.Divider(),
                     ft.Row([ft.Text("Modulo Actual:"), valor_estado], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     ft.Row([ft.Text("Nivel de Batería:"), valor_bateria], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     ft.Row([ft.Text("Memoria SD:"), valor_sd], alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
@@ -46,11 +46,11 @@ def main(page: ft.Page):
                 datos_json = respuesta.json()
 
                 valor_estado.value = str(datos_json.get("estado", "Error")).capitalize()
-                valor_bateria.value = f"{datos_json.get("bateria", 0)} %"
+                valor_bateria.value = f"{datos_json.get('bateria', 0)} %"
                 valor_sd.value = str(datos_json.get("tarjeta_sd", "Error")).capitalize()
 
                 texto_conexion.value = "¡Sincronizado con éxito!"
-                texto_conexion.color = ft.colors.GREATERTHAN
+                texto_conexion.color = ft.colors.GREEN
             
             else:
                 texto_conexion.value = f"Error del servidor: {respuesta.status_code}"
