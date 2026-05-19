@@ -59,7 +59,7 @@ def main(page: ft.Page):
                     texto_conexion.color = ft.colors.RED
         
         except Exception as error:
-            texto_conexion.value = "No se logro encontrar la red del pedal."
+            texto_conexion.value = f"Fallo de sistema: {str(error)}"
             texto_conexion.color = ft.colors.RED
 
         page.update()
