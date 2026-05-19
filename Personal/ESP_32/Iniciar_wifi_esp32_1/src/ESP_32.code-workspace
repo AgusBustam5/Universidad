@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "Iniciar_wifi_esp32_1",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
