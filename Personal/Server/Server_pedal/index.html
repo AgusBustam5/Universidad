@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control de Pedal</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px;}
+        button { padding: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Pedal ESP32</h1>
+    <div id="status">Esperando conexion...</div>
+    <br>
+    <button onclick="sincronizar()">Sincronizar Pedal</button>
+
+    <script>
+        async function sincronizar() {
+            document.getElementById("status").innerText = "Consultando...";
+            try {
+                let response = await fetch("http://192.168.4.1/api/estado");
+                let data = await response.json();
+
+                document.getElementById("status").innerText = 
+                    "Estado: " + data.estado + " | Batería: " + data.bateria + "%";
+            } catch (error) {
+                document.getElementById("status").innerText = "Error de conexión";
+            }
+        }
+    
+    </script>
+</body>
+</html>
