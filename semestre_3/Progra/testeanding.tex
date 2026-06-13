@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{booktabs} % Para tablas con mejor formato
+
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{Cheatsheet: Programación Avanzada (IIC2233)}
+
+\subsection*{1. Expresiones Regulares (Módulo \texttt{re})}
+\begin{tabular}{lll}
+\toprule
+\textbf{Función} & \textbf{Uso principal} & \textbf{Contexto} \\
+\midrule
+\texttt{re.match(p, s)} & Busca al inicio & Validación simple \\
+\texttt{re.fullmatch(p, s)} & Verifica todo el string & Validación estricta \\
+\texttt{re.search(p, s)} & Primera coincidencia & Localizar patrón \\
+\texttt{re.findall(p, s)} & Lista de coincidencias & Extracción de datos \\
+\texttt{re.sub(p, r, s)} & Reemplazo & Limpieza de texto \\
+\texttt{re.split(p, s)} & División & Procesar separadores \\
+\bottomrule
+\end{tabular}
+
+\subsection*{2. Grafos y Búsquedas}
+\begin{tabular}{lll}
+\toprule
+\textbf{Algoritmo} & \textbf{Descripción} & \textbf{Contexto} \\
+\midrule
+Lista Adyacencia & \texttt{\{nodo: [vecinos]\}} & Grafos dispersos \\
+Matriz Adyacencia & Matriz $N \times N$ & Grafos densos \\
+BFS & Amplitud (cola) & Camino más corto \\
+DFS & Profundidad (pila) & Exploración/Ciclos \\
+\bottomrule
+\end{tabular}
+
+\subsection*{3. NumPy y Pandas}
+\begin{tabular}{lll}
+\toprule
+\textbf{Librería} & \textbf{Función/Método} & \textbf{Uso} \\
+\midrule
+NumPy & \texttt{np.array(lista)} & Estructuras optimizadas \\
+NumPy & \texttt{np.sum(a, axis)} & Análisis estadístico \\
+Pandas & \texttt{pd.DataFrame(dict)} & Estructuración de datos \\
+Pandas & \texttt{df.groupby(col)} & Resumen de datos \\
+Pandas & \texttt{df[condición]} & Filtrado lógico \\
+\bottomrule
+\end{tabular}
+
+\end{document}
