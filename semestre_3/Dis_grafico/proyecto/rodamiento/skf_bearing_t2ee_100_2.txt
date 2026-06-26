@@ -1,0 +1,11 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-02032017-086586";"";
+"REFERENCE";"T2EE 100";"";
+"TraceParts.PartVersion";"1.4.5";"";
+"TraceParts.InstanceId";"10-02032017-08658670E0EO5PMN3R40OZANIM1LGQP";"";
+"TraceParts.PartTitle";"Tapered roller bearings, single row";"";
+"SUPPLIER";"SKF";"";
+"DESIGN";"Tapered roller bearings, single row, Bore Ø 100 mm, Outside Ø 165 mm";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"MASS";"3.891";"kg";
